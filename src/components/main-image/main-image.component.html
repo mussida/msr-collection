@@ -1,0 +1,72 @@
+<div class="absolute top-0 p-20 w-screen h-screen flex justify-center z-10">
+  <div class="relative">
+    <splide
+      [options]="{
+      perPage: 1,
+      pagination: true,
+      arrows: true,
+      cover: true,
+      type: 'fade',
+       classes:{
+          prev  : 'splide__arrow--prev transparent-background',
+          next  : 'splide__arrow--next transparent-background',
+        }
+      }"
+    >
+      <splide-slide>
+        <div class="w-full h-full flex justify-center items-center">
+          <img
+            src="/assets/placeholder1.JPEG"
+            class="object-cover max-w-[50rem] w-full h-full"
+            alt=""
+          />
+        </div>
+      </splide-slide>
+      <splide-slide>
+        <div class="w-full h-full flex justify-center items-center">
+          <img
+            src="/assets/placeholder2.JPEG"
+            class="object-cover max-w-[50rem] w-full h-full"
+            alt=""
+          />
+        </div>
+      </splide-slide>
+      <splide-slide>
+        <div class="w-full h-full flex justify-center items-center">
+          <img
+            src="/assets/50130002.JPG"
+            class="object-cover max-w-[50rem] w-full h-full"
+            alt=""
+          />
+        </div>
+      </splide-slide>
+    </splide>
+  </div>
+  <!-- <img
+    src="/assets/placeholder1.JPEG"
+    class="object-contain max-w-[50rem]"
+    alt=""
+  /> -->
+
+  <!-- <splide
+    class="block w-full h-full"
+    [options]="{
+    perPage: 1,
+    pagination: true,
+    arrows: false,
+    cover: true,
+    type: 'fade',
+    }"
+  >
+    <splide-slide>
+      <div class="relative flex-1 w-full h-full">
+        <img src="/assets/placeholder1.JPEG" class="absolute object-cover w-full h-full" />
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div class="relative flex-1 w-full h-full">
+        <img src="/assets/placeholder2.JPEG" class="absolute object-cover w-full h-full" />
+      </div>
+    </splide-slide>
+  </splide> -->
+</div>
