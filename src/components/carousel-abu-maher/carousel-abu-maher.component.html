@@ -1,0 +1,76 @@
+<div class="w-full flex flex-col items-center justify-center mt-6 md:mt-10 gap-4">
+  <div
+    class="flex flex-col gap-1 justify-between items-center w-[35rem] h-full z-30"
+  >
+    <div
+      class="font-noto_arabic_secondary cursor-pointer text-4xl font-bold text-orange-400 drop-shadow-[1px_1px_0px_rgba(22,160,133,1)] z-50"
+    >
+      ابو ماهر
+    </div>
+    <div
+      class="font-noto_arabic_secondary cursor-pointer text-3xl font-bold text-orange-400 drop-shadow-[1px_1px_0px_rgba(22,160,133,1)] z-50"
+    >
+      ABU-MAHER
+    </div>
+  </div>
+  <splide
+    [options]="{
+       classes:{
+          prev  : 'splide__arrow--prev transparent-background',
+          next  : 'splide__arrow--next transparent-background',
+        },
+      type: 'loop',
+      perPage: 1,
+      keyboard: false,
+      rewind: true,
+      pagination: false
+    }"
+    #horizontalThumbnailSplide
+  >
+    <splide-slide>
+      <div class="w-full h-full flex justify-center items-center">
+        <img class="max-h-[23rem]" src="assets/placeholder5.JPG" alt="" />
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div class="w-full h-full flex justify-center items-center">
+        <img class="max-h-[23rem]" src="assets/placeholder8.JPG" alt="" />
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div class="w-full h-full flex justify-center items-center">
+        <img class="max-h-[23rem]" src="assets/placeholder9.JPG" alt="" />
+      </div>
+    </splide-slide>
+  </splide>
+  <splide
+    [options]="{
+       classes:{
+          prev  : 'splide__arrow--prev arrow-none',
+          next  : 'splide__arrow--next arrow-none',
+      },
+        fixedWidth: 100,
+        fixedHeight: 60,
+        rewind: true,
+        gap: 2,
+        pagination: false,
+        perPage: 4,
+        isNavigation: true,
+        cover: true,
+        width: '34rem',
+        focus: 'center',
+      }"
+    [syncWith]="horizontalThumbnailSplide"
+    class="thumbnail-carousel h-full w-full flex justify-center"
+  >
+    <splide-slide>
+      <img src="assets/placeholder5.JPG" alt="" />
+    </splide-slide>
+    <splide-slide>
+      <img src="assets/placeholder8.JPG" alt="" />
+    </splide-slide>
+    <splide-slide>
+      <img src="assets/placeholder9.JPG" alt="" />
+    </splide-slide>
+  </splide>
+</div>

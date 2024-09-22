@@ -3,14 +3,10 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar-mobile',
+  selector: 'app-grid-stories',
   standalone: true,
   imports: [RouterModule, RouterLink, RouterLinkActive, CommonModule],
-  templateUrl: './navbar-mobile.component.html',
-  styleUrl: './navbar-mobile.component.css',
+  templateUrl: './grid-stories.component.html',
+  styleUrl: './grid-stories.component.css',
 })
-export class NavbarMobileComponent {
-  storiesHovered: boolean = false;
-  imagesHovered: boolean = false;
-  showDropdown: boolean = false;
-}
+export class GridStoriesComponent {}

@@ -9,3 +9,22 @@
 .splide__arrow--prev.transparent-background {
   background-color: transparent;
 }
+
+.thumbnail-carousel .splide__slide {
+  opacity: 0.6 !important;
+  border: none !important;
+  transition: opacity 0.1s ease !important;
+}
+
+.thumbnail-carousel .splide__slide.is-active {
+  opacity: 1 !important;
+  border: none !important;
+}
+
+.splide__arrow--prev.arrow-none{
+  display: none !important;
+}
+
+.splide__arrow--next.arrow-none{
+  display: none !important;
+}

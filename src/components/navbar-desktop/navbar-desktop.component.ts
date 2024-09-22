@@ -9,4 +9,7 @@ import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
   templateUrl: './navbar-desktop.component.html',
   styleUrl: './navbar-desktop.component.css',
 })
-export class NavbarDesktopComponent {}
+export class NavbarDesktopComponent {
+  storiesHovered: boolean = false;
+  imagesHovered: boolean = false;
+}

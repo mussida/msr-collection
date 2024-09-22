@@ -1,13 +1,102 @@
-<div class="flex p-3 justify-between absolute top-0 w-screen font-noto_english z-50">
-    <div class="flex flex-col">
-        <div class="font-noto_arabic text-4xl cursor-pointer">جمع مصر</div>
+<div
+  class="flex relative p-3 px-6 mt-2 justify-between items-center top-0 w-screen font-noto_english z-50"
+>
+  <div class="flex flex-col">
+    <div
+      class="font-noto_arabic_secondary cursor-pointer text-4xl font-bold text-yellow-300 drop-shadow-[2px_2px_0px_rgba(255,165,0,1)] hover:drop-shadow-[2px_2px_0px_rgba(100,165,0,1)] z-50"
+      [routerLink]="['']"
+    >
+      مَجْموعة مصر
     </div>
-    <div class="font-noto_english text-xs pt-2 cursor-pointer">
-        AUGUST, 2024
+  </div>
+  <div
+    class="font-noto_english absolute w-full text-[0.6rem] flex justify-center items-center cursor-pointer text-gray-500"
+  >
+    AUGUST, 2024
+  </div>
+  <div class="absolute z-50 text-gray-500 right-2">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6 cursor-pointer hover:text-yellow-500 icon-transition"
+      [ngClass]="{ 'icon-rotate': showDropdown }"
+      (click)="showDropdown = !showDropdown"
+    >
+      <path
+        *ngIf="!showDropdown"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
+      <path
+        *ngIf="showDropdown"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18 18 6M6 6l12 12"
+      />
+    </svg>
+  </div>
+
+  <div *ngIf="showDropdown"></div>
+  <!-- <div class="flex justify-between gap-5 text-xs">
+    <div
+      class="relative flex justify-center"
+      (mouseenter)="storiesHovered = true"
+      (mouseleave)="storiesHovered = false"
+    >
+      <button
+        routerLinkActive
+        #rlaStories="routerLinkActive"
+        [routerLink]="['stories']"
+        [ngClass]="{
+          'text-black font-noto_arabic_secondary text-lg': rlaStories.isActive,
+          'text-gray-500 hover:text-black': !rlaStories.isActive,
+        }"
+        class="cursor-pointer px-2"
+      >
+        {{ rlaStories.isActive ? "قصص" : "STORIES" }}
+      </button>
+      <div *ngIf="storiesHovered" class="absolute top-8 left-0 min-w-20 flex flex-col gap-2 py-3 px-2 bg-white">
+        <div class="cursor-pointer text-gray-500 hover:text-black">ABU MAHER</div>
+        <div class="cursor-pointer text-gray-500 hover:text-black">ROUBA</div>
+      </div>
     </div>
-    <div class="flex justify-between gap-2 text-xs pt-2">
-        <div class="cursor-pointer">STORIES</div>
-        <div class="cursor-pointer">IMAGES</div>
-        <div class="cursor-pointer">INFO</div>
+    <div
+      class="relative flex justify-center"
+      (mouseenter)="imagesHovered = true"
+      (mouseleave)="imagesHovered = false"
+    >
+      <button
+        routerLinkActive
+        #rlaImages="routerLinkActive"
+        [routerLink]="['images']"
+        [ngClass]="{
+      'text-black font-noto_arabic_secondary text-lg': rlaImages.isActive,
+      'text-gray-500 hover:text-black': !rlaImages.isActive,
+    }"
+        class="cursor-pointer px-2"
+      >
+        {{ rlaImages.isActive ? "الصور" : "IMAGES" }}
+      </button>
+      <div *ngIf="imagesHovered" class="absolute top-8 left-0 min-w-20 flex flex-col gap-2 bg-white py-3 px-2">
+        <div class="cursor-pointer text-gray-500 hover:text-black">ZABALEEN</div>
+        <div class="cursor-pointer text-gray-500 hover:text-black">ASWAN</div>
+      </div>
     </div>
+    <button
+      routerLinkActive
+      #rlaInfo="routerLinkActive"
+      [routerLink]="['/info']"
+      [ngClass]="{
+      'text-black font-noto_arabic_secondary text-lg': rlaInfo.isActive,
+      'text-gray-500 hover:text-black': !rlaInfo.isActive,
+    }"
+      class="cursor-pointer"
+    >
+      {{ rlaInfo.isActive ? "معلومات" : "INFO" }}
+    </button>
+  </div> -->
 </div>
