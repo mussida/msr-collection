@@ -25,7 +25,7 @@ jobs:
           npx angular-cli-ghpages --dir=dist/msr-collection
         env:
           CI: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 permissions:
   contents: write # Allow write permission to GITHUB_TOKEN to commit to deploy branch.
