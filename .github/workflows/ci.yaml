@@ -9,16 +9,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Angular Deploy gh-pages Actions
-      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.4.0
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Add Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '21'
+      -  name: Install dependencies
+         run: npm install
+      - name: Build
+        run: npm run build
       
-      with:
-        github_access_token: ${{ secrets.GITHUB_TOKEN }} # see the Configuration section for how you can create secrets
-        # build_configuration: staging # The build environment for the app. please look configurations in your angular.json
-        base_href: https://mussida.github.io/msr-collection/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
-        deploy_branch: gh-pages # The branch the action should deploy to.
-        angular_dist_build_folder: dist/msr-collection/browser # The folder where your project is supposed to be after running ng build by the action.
+      - name: Deploy
+        run: | 
+          npx angular-cli-ghpages --dir=dist/msr-collection
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
   contents: write # Allow write permission to GITHUB_TOKEN to commit to deploy branch.
