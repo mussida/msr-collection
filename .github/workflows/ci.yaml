@@ -22,7 +22,7 @@ jobs:
       
       - name: Deploy
         run: | 
-          npx angular-cli-ghpages --dir=dist/msr-collection
+          npx angular-cli-ghpages --dir=dist/msr-collection/browser
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
