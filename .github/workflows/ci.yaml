@@ -1,31 +1,33 @@
-name: Build and Deploy
+name: Build & Deploy to GitHub Pages
+
 on:
   push:
-    branches:
-      - main
-jobs:
-  build:
+    branches: ["main"]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Build job
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Add Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '22'
-      -  name: Install dependencies
-         run: npm install
+          node-version: latest
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Build
         run: npm run build
-      
-      - name: Deploy
-        run: | 
-          npx angular-cli-ghpages --dir=dist/msr-collection/browser
-        env:
-          CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-permissions:
-  contents: write # Allow write permission to GITHUB_TOKEN to commit to deploy branch.
+      - name: Deploy to Github pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npm run ng -- deploy --repo="https://github.com/mussida/msr-collection.git" --base-href=/YOUR_REPOSITORY_NAME/ --name=mussida --email=awniyoussef3@gmail.com
