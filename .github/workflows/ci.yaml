@@ -24,10 +24,10 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base-href="/msr-collection/"
 
       - name: Deploy to Github pages
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          npm run ng -- deploy --repo="https://github.com/mussida/msr-collection.git" --base-href=/YOUR_REPOSITORY_NAME/ --name=mussida --email=awniyoussef3@gmail.com
+          npx angular-cli-ghpages --repo="https://github.com/mussida/msr-collection.git" --name=mussida --email=awniyoussef3@gmail.com
